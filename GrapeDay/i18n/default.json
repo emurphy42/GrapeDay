@@ -1,0 +1,6 @@
+{
+  "Options_DayOfMonth_Name": "Day of Month",
+  "Options_DayOfMonth_Tooltip": "Grape Day is on this day of Summer",
+  "Options_AdditionalSpawns_Name": "Additional Spawns",
+  "Options_AdditionalSpawns_Tooltip": "Try to spawn this many extra grapes per location"
+}

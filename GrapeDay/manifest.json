@@ -1,0 +1,10 @@
+{
+  "Name": "Grape Day",
+  "Author": "John Peters (you know, the farmer?)",
+  "Version": "1.0.0",
+  "Description": "Spawns extra grapes on Summer 13.",
+  "UniqueID": "JohnPeters.GrapeDay",
+  "EntryDll": "GrapeDay.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [ "Nexus:35192" ]
+}
