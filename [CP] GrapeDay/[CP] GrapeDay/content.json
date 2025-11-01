@@ -1,0 +1,24 @@
+﻿{
+  "Format": "2.1.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/PassiveFestivals",
+      "Entries": {
+        "Grape Day": {
+          "DisplayName": "{{i18n:GrapeDay_Name}}",
+          "ShowOnCalendar": true,
+          "Season": 1,
+          "StartDay": "{{JohnPeters.GrapeDay/DayOfMonth}}",
+          "EndDay": "{{JohnPeters.GrapeDay/DayOfMonth}}",
+          "StartTime": 610,
+          "StartMessage": "{{i18n:GrapeDay_StartMessage}}",
+          "OnlyShowMessageOnFirstDay": false,
+          "CustomFields": {
+            "JohnPeters.CalendarBuffs/BuffIcon": "398" // Grape
+          }
+        }
+      }
+    }
+  ]
+}

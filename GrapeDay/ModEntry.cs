@@ -4,6 +4,7 @@ using StardewValley;
 using GenericModConfigMenu;
 using Microsoft.Xna.Framework;
 using StardewValley.Extensions;
+using ContentPatcher;
 
 namespace GrapeDay
 {
@@ -32,9 +33,15 @@ namespace GrapeDay
             Helper.Events.GameLoop.DayEnding += (e, a) => SpawnGrapeDayObjects();
         }
 
-        /// <summary>Add to Generic Mod Config Menu</summary>
+        /// <summary>Initial setup</summary>
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
+            OnGameLaunched_GenericModConfigMenu();
+            OnGameLaunched_ContentPatcher();
+        }
+
+        /// <summary>Add to Generic Mod Config Menu</summary>
+        private void OnGameLaunched_GenericModConfigMenu() {
             // get Generic Mod Config Menu's API (if it's installed)
             var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
             if (configMenu is null)
@@ -66,6 +73,25 @@ namespace GrapeDay
                 min: 0,
                 max: 10
             );
+        }
+
+        /// <summary>Add to Content Patcher</summary>
+        private void OnGameLaunched_ContentPatcher()
+        {
+            // get Content Patcher's API (if it's installed)
+            var contentPatcher = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>("Pathoschild.ContentPatcher");
+            if (contentPatcher == null)
+            {
+                return;
+            }
+
+            contentPatcher.RegisterToken(this.ModManifest, "DayOfMonth", () => {
+                if (this.Config != null)
+                {
+                    return new[] { this.Config.DayOfMonth.ToString() };
+                }
+                return null;
+            });
         }
 
         /// <summary>Spawn additional objects on Grape Day.</summary>

@@ -1,16 +1,18 @@
 {
-  "Name": "Grape Day",
+  "Name": "[CP] Grape Day",
   "Author": "John Peters (you know, the farmer?)",
   "Version": "1.1.0",
-  "Description": "Spawns extra grapes on Summer 13.",
-  "UniqueID": "JohnPeters.GrapeDay",
-  "EntryDll": "GrapeDay.dll",
+  "Description": "Spawns extra grapes on Summer 13",
+  "UniqueID": "JohnPeters.GrapeDayCP",
   "MinimumApiVersion": "3.0.0",
   "UpdateKeys": [ "Nexus:35192" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+   },
   "Dependencies": [
     {
-      "UniqueID": "Pathoschild.ContentPatcher",
-      "IsRequired": false
+      "UniqueID": "JohnPeters.GrapeDay",
+      "IsRequired": true
     },
     {
       "UniqueID": "JohnPeters.CalendarBuffs",
